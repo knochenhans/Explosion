@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=2 format=3 uid="uid://bxh6k5fua1ycg"]
 
-[ext_resource type="Script" path="res://addons/explosion/ExplosionResource.cs" id="1_gkbtt"]
+[ext_resource type="Script" path="res://addons/Explosion/ExplosionResource.cs" id="1_gkbtt"]
 
 [resource]
 script = ExtResource("1_gkbtt")

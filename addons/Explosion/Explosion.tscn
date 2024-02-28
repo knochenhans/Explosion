@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bidxalfmujo2h"]
 
-[ext_resource type="Script" path="res://addons/explosion/ExplosionNode.cs" id="1_3qyda"]
+[ext_resource type="Script" path="res://addons/Explosion/ExplosionNode.cs" id="1_3qyda"]
 
 [node name="Explosion" type="Node2D"]
 script = ExtResource("1_3qyda")

@@ -21,7 +21,7 @@ project/assembly_name="Explosion"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/explosion/plugin.cfg")
+enabled=PackedStringArray()
 
 [rendering]
 

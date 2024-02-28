@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cbppt24yrgbll" path="res://resources/explosion.png" id="1_2uod5"]
 [ext_resource type="AudioStream" uid="uid://dackl3wwueg48" path="res://resources/explosion.ogg" id="2_k77oq"]
-[ext_resource type="Script" path="res://addons/explosion/ExplosionResource.cs" id="3_nambk"]
+[ext_resource type="Script" path="res://addons/Explosion/ExplosionResource.cs" id="3_gmwwn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_slh6v"]
 atlas = ExtResource("1_2uod5")
@@ -125,7 +125,7 @@ animations = [{
 }]
 
 [resource]
-script = ExtResource("3_nambk")
-MaxDuration = 0.3
+script = ExtResource("3_gmwwn")
+MaxDuration = 0.0
 Frames = SubResource("SpriteFrames_kagif")
 Sound = ExtResource("2_k77oq")
