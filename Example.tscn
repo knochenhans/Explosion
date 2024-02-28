@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://nhutjuajkehk"]
+
+[ext_resource type="PackedScene" uid="uid://bidxalfmujo2h" path="res://addons/explosion/Explosion.tscn" id="1_28dfc"]
+[ext_resource type="Resource" uid="uid://5drfxjk5t21i" path="res://resources/Example.tres" id="2_65a4r"]
+
+[node name="Example" type="Node2D"]
+position = Vector2(586, 373)
+
+[node name="Explosion" parent="." instance=ExtResource("1_28dfc")]
+ExplosionResource = ExtResource("2_65a4r")

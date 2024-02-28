@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bidxalfmujo2h"]
+
+[ext_resource type="Script" path="res://addons/explosion/ExplosionNode.cs" id="1_3qyda"]
+
+[node name="Explosion" type="Node2D"]
+script = ExtResource("1_3qyda")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
