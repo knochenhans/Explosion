@@ -25,8 +25,9 @@ public partial class ExplosionNode : Node2D
 		AnimatedSpriteNode.AnimationFinished += _OnAnimatedSpriteNodeAnimationFinished;
 		AnimatedSpriteNode.Play();
 
+		foreach (AudioStream audioStream in ExplosionResource.Sounds)
+			(AudioStreamPlayerNode.Stream as AudioStreamRandomizer).AddStream(-1, audioStream);
 		AudioStreamPlayerNode = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
-		AudioStreamPlayerNode.Stream = ExplosionResource.Sound;
 		AudioStreamPlayerNode.Finished += _OnAudioStreamPlayerFinished;
 		AudioStreamPlayerNode.Play();
 

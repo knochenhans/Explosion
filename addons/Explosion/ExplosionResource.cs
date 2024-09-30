@@ -12,5 +12,5 @@ public partial class ExplosionResource : Resource
     public SpriteFrames Frames { get; set; }
 
     [Export]
-    public AudioStream Sound { get; set; }
+    public Godot.Collections.Array<AudioStream> Sounds { get; set; }
 }
