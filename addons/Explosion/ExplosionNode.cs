@@ -5,9 +5,9 @@ public partial class ExplosionNode : Node2D
 	[Export]
 	public ExplosionResource ExplosionResource { get; set; }
 
-	public AnimatedSprite2D AnimatedSpriteNode { get; private set; }
-	public AudioStreamPlayer2D AudioStreamPlayerNode { get; private set; }
-	public Timer TimerNode { get; private set; }
+	public AnimatedSprite2D AnimatedSpriteNode => GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+	public AudioStreamPlayer2D AudioStreamPlayerNode => GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
+	public Timer TimerNode => GetNode<Timer>("Timer");
 
 	public bool AnimationFinished { get; private set; }
 	public bool SoundFinished { get; private set; }
@@ -20,36 +20,34 @@ public partial class ExplosionNode : Node2D
 			return;
 		}
 
-		AnimatedSpriteNode = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		AnimatedSpriteNode.SpriteFrames = ExplosionResource.Frames;
-		AnimatedSpriteNode.AnimationFinished += _OnAnimatedSpriteNodeAnimationFinished;
+		AnimatedSpriteNode.AnimationFinished += OnAnimatedSpriteNodeAnimationFinished;
 		AnimatedSpriteNode.Play();
 
 		foreach (AudioStream audioStream in ExplosionResource.Sounds)
 			(AudioStreamPlayerNode.Stream as AudioStreamRandomizer).AddStream(-1, audioStream);
-		AudioStreamPlayerNode = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
-		AudioStreamPlayerNode.Finished += _OnAudioStreamPlayerFinished;
+
+		AudioStreamPlayerNode.Finished += OnAudioStreamPlayerFinished;
 		AudioStreamPlayerNode.Play();
 
-		TimerNode = GetNode<Timer>("Timer");
 		if (ExplosionResource.MaxDuration > 0.0f)
 		{
 			TimerNode.WaitTime = ExplosionResource.MaxDuration;
-			TimerNode.Timeout += _OnTimerTimeout;
+			TimerNode.Timeout += OnTimerTimeout;
 			TimerNode.Start();
 		}
 	}
 
-	public void _OnTimerTimeout() => QueueFree();
+	public void OnTimerTimeout() => QueueFree();
 
-	public void _OnAnimatedSpriteNodeAnimationFinished()
+	public void OnAnimatedSpriteNodeAnimationFinished()
 	{
 		AnimationFinished = true;
 		Visible = false;
 		CheckQueueFree();
 	}
 
-	public void _OnAudioStreamPlayerFinished()
+	public void OnAudioStreamPlayerFinished()
 	{
 		SoundFinished = true;
 		CheckQueueFree();
