@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="VisualEffectResource" format=3 uid="uid://bxh6k5fua1ycg"]
+
+[ext_resource type="SpriteFrames" uid="uid://cuqpc0v3q2qjd" path="res://addons/Explosion/Resources/Images/hit.aseprite" id="1_4mpqo"]
+[ext_resource type="Script" uid="uid://f3uhca0b88qq" path="res://addons/Explosion/VisualEffectResource.cs" id="1_gkbtt"]
+[ext_resource type="Script" uid="uid://chiidjpp5n41d" path="res://addons/SoundSet/SoundSetResource.cs" id="4_ek33j"]
+
+[sub_resource type="Resource" id="Resource_ig6qj"]
+script = ExtResource("4_ek33j")
+SoundSet = []
+
+[resource]
+script = ExtResource("1_gkbtt")
+MaxDuration = 0.2
+Frames = ExtResource("1_4mpqo")
+SoundSet = SubResource("Resource_ig6qj")

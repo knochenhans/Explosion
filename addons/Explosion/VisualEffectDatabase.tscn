@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c3cre18pj1c5o"]
+
+[ext_resource type="Script" uid="uid://cjagr2vk2urtt" path="res://addons/Explosion/VisualEffectDatabase.cs" id="1_78uxm"]
+
+[node name="ExplosionDatabase" type="Node"]
+script = ExtResource("1_78uxm")

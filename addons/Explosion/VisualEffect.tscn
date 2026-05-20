@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bidxalfmujo2h"]
+
+[ext_resource type="Script" uid="uid://cj285vcwvld4e" path="res://addons/Explosion/VisualEffect.cs" id="1_w1osr"]
+[ext_resource type="Script" uid="uid://il6ijttrhapg" path="res://addons/TimedAudioStreamPlayer/TimedAudioStreamPlayer2D.cs" id="2_3sd01"]
+[ext_resource type="Script" uid="uid://ply4i6vsn2t2" path="res://addons/TimedAudioStreamPlayer/TimedAudioStreamPlayerResource.cs" id="3_0d3sx"]
+[ext_resource type="Texture2D" uid="uid://bvh05fajoll1a" path="res://Resources/Images/2d_lights_and_shadows_neutral_point_light.webp" id="4_3sd01"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qxpgy"]
+
+[sub_resource type="Resource" id="Resource_a573o"]
+script = ExtResource("3_0d3sx")
+RandomVolumeAdded = 1.0
+RandomPitch = 1.1
+metadata/_custom_type_script = "uid://ply4i6vsn2t2"
+
+[node name="VisualEffect" type="Node2D" unique_id=863490284 node_paths=PackedStringArray("AnimatedSprite", "AudioStreamPlayer", "Timer", "PointLight")]
+y_sort_enabled = true
+script = ExtResource("1_w1osr")
+AnimatedSprite = NodePath("AnimatedSprite2D")
+AudioStreamPlayer = NodePath("TimedAudioStreamPlayer2D")
+Timer = NodePath("Timer")
+PointLight = NodePath("PointLight2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=70784906]
+y_sort_enabled = true
+
+[node name="TimedAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=272745745]
+stream = SubResource("AudioStreamRandomizer_qxpgy")
+bus = &"SFX"
+script = ExtResource("2_3sd01")
+TimedAudioStreamPlayerResource = SubResource("Resource_a573o")
+metadata/_custom_type_script = "uid://il6ijttrhapg"
+
+[node name="Timer" type="Timer" parent="." unique_id=1280767550]
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=290949444]
+texture = ExtResource("4_3sd01")
